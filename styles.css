@@ -1,0 +1,274 @@
+/* Paleta de Colores Y2K: Verde Matrix, Fucsia Cyber, Gris Metálico y Azul Eléctrico */
+:root {
+    --bg-color: #03030a;
+    --win-bg: #1c1c28;
+    --win-border: #444464;
+    --neon-green: #00ff66;
+    --neon-pink: #ff007f;
+    --neon-blue: #00e5ff;
+    --text-color: #e2e2ec;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    overflow-x: hidden;
+}
+
+/* Efecto de líneas de escaneo CRT antiguas */
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 6px 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Contenedor tipo Ventana de Software año 2000 */
+.y2k-container {
+    width: 100%;
+    max-width: 650px;
+    background-color: var(--win-bg);
+    border: 4px solid var(--win-border);
+    box-shadow: 6px 6px 0px var(--bg-color), 10px 10px 0px var(--neon-blue);
+    position: relative;
+    z-index: 2;
+}
+
+.window-header {
+    background: linear-gradient(90deg, #002244, var(--neon-blue));
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--win-border);
+    font-weight: bold;
+}
+
+.window-title {
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.window-controls span {
+    background-color: #ccc;
+    color: #000;
+    padding: 1px 6px;
+    margin-left: 3px;
+    font-size: 12px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.marquee-container {
+    background-color: #000;
+    color: var(--neon-green);
+    padding: 4px;
+    border-bottom: 2px solid var(--win-border);
+    font-size: 14px;
+}
+
+.dashboard {
+    padding: 20px;
+}
+
+.glitch-title {
+    font-family: 'VT323', monospace;
+    font-size: 42px;
+    text-align: center;
+    color: var(--neon-blue);
+    margin: 10px 0 0 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px var(--neon-pink);
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 13px;
+    color: #8b8ba7;
+}
+
+/* Tarjetas de Combustible */
+.fuel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.fuel-card {
+    background-color: #0c0c14;
+    border: 2px dashed var(--neon-blue);
+    padding: 15px;
+    text-align: center;
+}
+
+.fuel-card.premium {
+    border-color: var(--neon-pink);
+}
+
+.card-header {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.price-box {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    padding: 10px;
+    border: 1px solid #333;
+}
+
+.price-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 11px;
+    color: #8b8ba7;
+}
+
+.value {
+    font-size: 24px;
+    color: var(--neon-green);
+    font-weight: bold;
+}
+
+.value.critical {
+    color: #ff3333;
+}
+
+.unit {
+    font-size: 11px;
+    margin: 5px 0 0 0;
+    color: #666;
+}
+
+/* Formulario e Interactividad */
+.calculator-section {
+    background-color: #13131f;
+    border: 2px solid #333;
+    padding: 15px;
+}
+
+h2 {
+    font-size: 18px;
+    color: var(--neon-blue);
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: var(--neon-green);
+}
+
+select, input {
+    background-color: #000;
+    border: 2px solid var(--win-border);
+    color: #fff;
+    padding: 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 16px;
+}
+
+select:focus, input:focus {
+    border-color: var(--neon-blue);
+    outline: none;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    flex-grow: 1;
+}
+
+.input-wrapper span {
+    background-color: #222;
+    padding: 8px 12px;
+    border: 2px solid var(--win-border);
+    border-left: none;
+}
+
+/* Botón Estilo Y2K */
+.y2k-btn {
+    width: 100%;
+    background-color: var(--neon-blue);
+    color: #000;
+    border: 2px solid #fff;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 16px;
+    box-shadow: 3px 3px 0px #000;
+    transition: all 0.1s ease;
+}
+
+.y2k-btn:active {
+    box-shadow: 0px 0px 0px #000;
+    transform: translate(3px, 3px);
+}
+
+/* Caja de Resultados de Alerta */
+.result-box {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #000;
+    border-left: 4px solid var(--neon-green);
+}
+
+.result-box.danger {
+    border-left-color: var(--neon-pink);
+}
+
+.result-box.hidden {
+    display: none;
+}
+
+.terminal-header {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.window-footer {
+    background-color: #111;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    border-top: 2px solid var(--win-border);
+    color: #666;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+    color: var(--neon-green);
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
