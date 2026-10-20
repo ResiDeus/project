@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ DACO FUEL MONITOR v1.0 [Y2K EDITION] ⚡</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente pixelada estilo retro -->
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fondo de matriz digital flotante -->
+    <div class="scanlines"></div>
+
+    <div class="y2k-container">
+        <!-- Encabezado Estilo Sistema Operativo Viejo -->
+        <header class="window-header">
+            <div class="window-title">📂 DACO_GAS_MONITOR.EXE</div>
+            <div class="window-controls">
+                <span>_</span>
+                <span>🔲</span>
+                <span class="close-btn">X</span>
+            </div>
+        </header>
+
+        <!-- Marquesina Retro -->
+        <div class="marquee-container">
+            <marquee scrollamount="5">⚠️ ALERTA DACO: PRECIOS MÁXIMOS VIGENTES EN PUERTO RICO -- EVITA LA ESPECULACIÓN EN BOMBA -- REPORTA ABUSOS A CONFIDENCIA@DACO.PR.GOV ⚠️</marquee>
+        </div>
+
+        <!-- Panel Principal de Monitoreo -->
+        <main class="dashboard">
+            <h1 class="glitch-title" data-text="MONITOREO DE GASOLINA">MONITOREO DE GASOLINA</h1>
+            <p class="subtitle">División de Estudios Económicos - Parámetros de Razónabilidad</p>
+
+            <!-- Grid de Combustibles -->
+            <div class="fuel-grid">
+                <!-- Gasolina Regular -->
+                <div class="fuel-card regular">
+                    <div class="card-header">⛽ GASOLINA REGULAR</div>
+                    <div class="price-box">
+                        <div class="price-stat">
+                            <span class="label">MÍNIMO</span>
+                            <span class="value" id="reg-min">113.7¢</span>
+                        </div>
+                        <div class="price-stat">
+                            <span class="label">MÁXIMO</span>
+                            <span class="value critical" id="reg-max">117.7¢</span>
+                        </div>
+                    </div>
+                    <p class="unit">Centavos por Litro (¢/L)</p>
+                </div>
+
+                <!-- Gasolina Premium -->
+                <div class="fuel-card premium">
+                    <div class="card-header">🧪 GASOLINA PREMIUM</div>
+                    <div class="price-box">
+                        <div class="price-stat">
+                            <span class="label">MÍNIMO</span>
+                            <span class="value" id="prem-min">126.7¢</span>
+                        </div>
+                        <div class="price-stat">
+                            <span class="label">MÁXIMO</span>
+                            <span class="value critical" id="prem-max">137.7¢</span>
+                        </div>
+                    </div>
+                    <p class="unit">Centavos por Litro (¢/L)</p>
+                </div>
+            </div>
+
+            <!-- Sección interactiva: ¿Te están robando? -->
+            <section class="calculator-section">
+                <h2>💾 DETECTOR DE ESTAFAS / SCAM_CHECKER.BAT</h2>
+                <p>Ingresa los datos de la estación para validar si estás pagando de más:</p>
+                
+                <div class="form-group">
+                    <label for="fuel-type">TIPO DE GASOLINA:</label>
+                    <select id="fuel-type">
+                        <option value="regular">Regular</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-price">PRECIO EN BOMBA (Ej: 1.19 o 119):</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="user-price" step="0.1" placeholder="118.5">
+                        <span>¢</span>
+                    </div>
+                </div>
+
+                <button id="btn-check" class="y2k-btn">ANALIZAR PRECIO ⚙️</button>
+
+                <!-- Caja de Resultados de Diagnóstico -->
+                <div id="result-box" class="result-box hidden">
+                    <div class="terminal-header">DIAGNOSTICO_DEL_SISTEMA:</div>
+                    <p id="result-text"></p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pie de página estilo Y2K -->
+        <footer class="window-footer">
+            <span>SISTEMA VIGENTE: OCTUBRE 2026</span>
+            <span class="blink">● ONLINE</span>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
